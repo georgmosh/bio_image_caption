@@ -18,26 +18,26 @@ def split_cases(reports_images, reports_text, keys, filename):
             output_file.write(new_image + "\t" + new_images[new_image])
             output_file.write("\n")
 
-#
+
 # create dataset folder
-#try:
-#    rmtree("iu_xray/")
-#except BaseException:
-#    pass
-#os.makedirs("iu_xray/")
-#
+try:
+    rmtree("iu_xray/")
+except BaseException:
+    pass
+os.makedirs("iu_xray/")
+
 # download PNG images
-#os.system("wget -P iu_xray/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_png.tgz")
-#
+os.system("wget -P iu_xray/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_png.tgz")
+
 # download reports
-#os.system("wget -P iu_xray/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_reports.tgz")
-#
+os.system("wget -P iu_xray/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_reports.tgz")
+
 # create folder for images
-#os.makedirs("iu_xray/iu_xray_images/")
-#
+os.makedirs("iu_xray/iu_xray_images/")
+
 # unzip
-#os.system("tar -xzf ./iu_xray/NLMCXR_png.tgz -C iu_xray/iu_xray_images/")
-#os.system("tar -xzf ./iu_xray/NLMCXR_reports.tgz -C iu_xray/")
+os.system("tar -xzf ./iu_xray/NLMCXR_png.tgz -C iu_xray/iu_xray_images/")
+os.system("tar -xzf ./iu_xray/NLMCXR_reports.tgz -C iu_xray/")
 
 # read the reports xml files and create the dataset tsv
 reports_path = "iu_xray/ecgen-radiology"
