@@ -4,6 +4,8 @@ import pandas as pd
 from pycocoevalcap.bleu.bleu import Bleu
 from pycocoevalcap.meteor.meteor import Meteor
 from pycocoevalcap.rouge.rouge import Rouge
+from pycocoevalcap.cider.cider import Cider
+from pycocoevalcap.spice.spice import Spice
 
 parser = argparse.ArgumentParser(description="Takes as arguments a file with the gold captions and "
                                              "a file with the generated ones and computes "
@@ -49,7 +51,9 @@ def compute_scores(gts, res):
     scorers = [
         (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
         (Meteor(), "METEOR"),
-        (Rouge(), "ROUGE_L")
+        (Rouge(), "ROUGE_L"),
+        (Spice(), "SPICE"),
+        (Cider(), "CIDEr")
     ]
 
     # Compute score for each metric
